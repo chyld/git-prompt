@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "ansi-styles": "^3.2.1",
+    "chalk": "^2.4.2",
     "execa": "^1.0.0"
   }
 }
