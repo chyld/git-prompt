@@ -1,4 +1,4 @@
-const chalk = require("chalk");
+const { underline, color } = require("./colors");
 
 module.exports.parse = lines => {
   if (lines.length == 0) return;
@@ -29,10 +29,10 @@ module.exports.parse = lines => {
     }
   });
 
-  console.log(
-    chalk.underline.blue(local),
-    chalk.underline.red(upstream),
-    `${chalk.blue(ahead)}/${chalk.red(behind)}`,
-    dirty ? "+" : "-"
-  );
+  const output = `${underline("blue", local)} ${underline(
+    "red",
+    upstream
+  )} ${color("blue", ahead)}/${color("red", behind)} ${dirty ? "+" : "-"}`;
+
+  process.stdout.write(output);
 };
