@@ -1,4 +1,4 @@
-const chalk = require("chalk");
+const { display } = require("./utilities");
 
 module.exports.parse = lines => {
   if (lines.length == 0) return;
@@ -29,11 +29,5 @@ module.exports.parse = lines => {
     }
   });
 
-  const output = `[${chalk.blue(local)} ${chalk.red(
-    upstream
-  )} ${chalk.underline.blue(ahead)}/${chalk.underline.red(behind)} ${chalk.bold(
-    dirty ? "+" : "-"
-  )}]`;
-
-  process.stdout.write(output);
+  display(local, upstream, ahead, behind, dirty);
 };
