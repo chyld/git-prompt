@@ -1,8 +1,6 @@
 const { display } = require("./utilities");
 
 module.exports.parse = lines => {
-  if (lines.length == 0) return;
-
   let local = "";
   let upstream = "";
   let ahead = 0;

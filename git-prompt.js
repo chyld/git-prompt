@@ -11,5 +11,7 @@ const { parse } = require("./parser.js");
       "--branch"
     ]);
     parse(stdout.split("\n"));
-  } catch (error) {}
+  } catch (error) {
+    process.stdout.write("[.]");
+  }
 })();
