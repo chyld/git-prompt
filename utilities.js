@@ -14,8 +14,8 @@ module.exports.display = (local, upstream, ahead, behind, dirty) => {
   const d = `${esc(style.underline.open)}${behind}${esc(
     style.underline.close
   )}`;
-  const e = dirty ? "😳" : "😎";
-  const output = `${a} ${b} ${c}/${d} ${e} `;
+  const e = dirty ? "+" : "-";
+  const output = `[${a} ${b} ${c}/${d} ${e}]`;
 
   process.stdout.write(output);
 };
